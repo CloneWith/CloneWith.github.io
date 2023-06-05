@@ -1,9 +1,9 @@
-# CloneWith.github.io
+# CloneWith's Map Repo
 
-Hello, I am CloneWith. This is a repo for my Github Page.
+Hello, I am CloneWith. This is a branch repo for my beatmaps on osu!.
 
-你好，我是复予。这是我 Github Page 的仓库。
+你好，我是复予。这是我用来存放谱面的 Github 仓库。
 
-There are some articles about osu!, IT and other things. Anyone is welcome!
+If you would like to make collab / guest diffs with me or invite me, please DM me on Bilibili or osu!. I'll reply as soon as I am available.
 
-有一些关于 osu!、信息技术与其他东西的文章。欢迎您的来访！
+如果你想找我做合作/客串难度，可在 B 站上或 osu! 上私信我，会第一时间回复。
