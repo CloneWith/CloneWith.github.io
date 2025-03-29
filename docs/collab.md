@@ -23,22 +23,28 @@ Currently receiving/looking for cooperation on several projects. The detail as f
 
 ## 软件项目 Software {#software}
 
-### [opsu!](https://github.com/clonewith/opsu)
+### [osu! Tournament Editor](https://github.com/clonewith/osu-tournament-editor)
 
-opsu! is an *unofficial* open-source osu! client originally created by [@itdelatrisu](https://github.com/itdelatrisu). Now I'm adding some new features to it and will continuously maintain it for years.
+An lightweight and independent tournament configuration editor for osu!lazer tournament client, written in C++ and using Qt6.
+
+I'm considering adding more features into this project and making it more helpful for tournament managers and streamers.
 
 ### [osu!(lazer)](https://github.com/clonewith/osu)
 
-The future – and final – iteration of the osu! game client which marks the beginning of an open era.
+> The future – and final – iteration of the osu! game client which marks the beginning of an open era.
 
 Currently I'm trying to make some changes or improvements on this, including:
 
 - Minor UI / UX changes
 - Tournament client (a.k.a. osu!tournament) changes
 
-Mostly I work on the tournament client part, implementing innovative mappool layouts, button and form styles, and also animations! Most of this works for [osu! FumoFumo Cup](https://offfc.github.io), and is done with my dear teammates in the development team.
+Mostly I work on the tournament client part, implementing innovative mappool layouts, button and form styles, and also animations! Most of this works for [osu! FumoFumo Cup](https://offfc.github.io), and is done with my dear mates in the development team.
 
 Absolutely this would persist for *really* a long time, cause it's interesting for me to dig into the infrastructure of this great project!
+
+### [opsu!](https://github.com/clonewith/opsu)
+
+opsu! is an *unofficial* open-source osu! client originally created by [@itdelatrisu](https://github.com/itdelatrisu). Now I'm adding some new features to it and will continuously maintain it for years.
 
 ### [かたわ少女: Re-Engineered](https://fhs.sh)
 
