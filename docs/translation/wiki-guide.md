@@ -28,6 +28,65 @@ comments: true
 
 决定好要做的事情后，就可以开始翻译了。
 
+### 内容格式
+
+osu!wiki 中的规范很多，但翻译时并不要求全都记住。
+
+在翻译的过程中，记住这几点会有助于保持不同文章翻译间排版与格式的统一性：
+
+- 确保新文件的编码为 UTF-8，行尾序列设置为 LF
+- 标题前后、段落之间都需要加空行，列表内项目间不加空行
+- 中英文间需要加一个（半角）空格以使排版美观，某些特殊情况除外
+- 位于行首与列表项开头的粗体/斜体样式后需要加一个空格，以使其能正常渲染
+- 括号（通常是小括号）的样式取决于其中的内容，其他标点的应用以中文为主，灵活运用
+- 标题若有自定义标签，需保留不译以保证不同语言都能使用同一标签定位到相同的小节
+- 头注中的标签尽量翻译，翻译内容附加到所有原有标签后
+- 一般不将术语的中英文同时给出，全文第一次提及而且并非常用的除外
+- 代码块中的按键、变量、方法名等应保留原文
+
+上述规则的运用可参考下列示例（选自 AR 值文章的中文翻译，经过轻度改写）：
+
+```md
+---
+tags:
+  - approach time
+  - AR
+  - reading
+  - 读谱
+  - 缩圈时间
+---
+
+# 缩圈速度 (Approach rate)
+
+*关于建议的 AR 值，参见：[谱面上架标准 (RC)](/wiki/Ranking_criteria)。*
+
+**缩圈速度** (***AR***) 是一张[谱面](/wiki/Beatmap)的难度设置，定义了[打击物件](/wiki/Gameplay/Hit_object)相对于应被打击或收集时开始渐显的时间。
+
+<!-- 括号样式取决于内容：全英文则使用英文样式，有中文则使用中文样式 -->
+在 [osu!taiko](/wiki/Game_mode/osu!taiko) 与 [osu!mania](/wiki/Game_mode/osu!mania) 模式中，AR 值设置不起作用。
+
+两个模式中的滚动速度由[滑条速度 (slider velocity)](/wiki/Gameplay/Hit_object/Slider/Slider_velocity)决定，其依赖于 [BPM](/wiki/Music_theory/Tempo) 与滑条速度乘数。
+
+## 动画时长<!-- 大括号部分为自定义标签 --> {#animation-length}
+
+打击物件在屏幕上保持可见的时长范围为从 AR0 的 1800 毫秒到 AR10 的 450 毫秒。
+
+...
+
+打击物件在 `X - preempt` 时刻开始渐显，其中：
+
+<!-- 代码块：保留变量与方法名 -->
+- AR < 5: `preempt = 1200ms + 600ms * (5 - AR) / 5`
+- AR = 5: `preempt = clamp(AR * 1.14, 514, 1919)`
+- AR > 5: `preempt = 1200ms - 750ms * (AR - 5) / 5`
+
+### 表格比较
+
+![](/wiki/shared/ARTable.jpg "AR 和不同模组组合下的可见性比较")
+
+HT 或 DT 下的 AR 值通常指其感知值。比如，“AR 8 + DT”也可以写作“AR 9.6”。
+```
+
 ## 附录
 
 这一小节收纳了一些常用工具与资源，部分内容基于个人经验给出。
@@ -39,7 +98,7 @@ comments: true
 - 文本编辑器（支持 Markdown 与 EditorConfig 者较好）
 - Git：用于版本控制、拉取与提交更改
 
-笔者常用的是 VS Code / Code OSS 与 Kate。后者自带 Markdown 的格式支持，前者可以通过安装插件来实现；
+笔者常用的是 [VS Code](https://code.visualstudio.com) / Code OSS 与 [Kate](https://apps.kde.org/zh-cn/kate)。后者自带 Markdown 的格式支持，前者可以通过安装插件来实现；
 
 - markdownlint
 - EditorConfig for VS Code
@@ -49,7 +108,7 @@ comments: true
 目前 osu!wiki 中存在已经很完备的规范性文章，同时也有为贡献者准备的贡献指南。
 
 - [贡献指南](https://osu.ppy.sh/wiki/zh/osu!_wiki/Contribution_guide)：集中于讲述一篇文章（翻译）从编辑到呈现的全过程，建议新人先去通读
-- [文章风格规范](https://osu.ppy.sh/wiki/zh/Article_styling_criteria)：分为[排版](https://osu.ppy.sh/wiki/zh/Article_styling_criteria/Formatting)与[写作](https://osu.ppy.sh/wiki/zh/Article_styling_criteria/Writing)两部分，是 osu! wiki 的强制执行样式标准
+- [文章风格规范](https://osu.ppy.sh/wiki/zh/Article_styling_criteria)：分为[排版](https://osu.ppy.sh/wiki/zh/Article_styling_criteria/Formatting)与[写作](https://osu.ppy.sh/wiki/zh/Article_styling_criteria/Writing)两部分，是 osu!wiki 的强制执行样式标准
 
 如果在实际翻译时依然不熟悉具体的规则，可以参照英文原文的排版进行翻译。
 
