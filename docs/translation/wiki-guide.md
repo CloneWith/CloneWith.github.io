@@ -36,7 +36,7 @@ osu!wiki 中的规范很多，但翻译时并不要求全都记住。
 
 - 确保新文件的编码为 UTF-8，行尾序列设置为 LF
 - 标题前后、段落之间都需要加空行，列表内项目间不加空行
-- 中英文间需要加一个（半角）空格以使排版美观，某些特殊情况除外
+- 中英文、中文与数字间需要加一个（半角）空格以使排版美观，某些特殊情况除外
 - 位于行首与列表项开头的粗体/斜体样式后需要加一个空格，以使其能正常渲染
 - 括号（通常是小括号）的样式取决于其中的内容，其他标点的应用以中文为主，灵活运用
 - 标题若有自定义标签，需保留不译以保证不同语言都能使用同一标签定位到相同的小节
@@ -86,6 +86,57 @@ tags:
 
 HT 或 DT 下的 AR 值通常指其感知值。比如，“AR 8 + DT”也可以写作“AR 9.6”。
 ```
+
+## 3. 提交更改
+
+osu!wiki 的文章作为 Markdown 格式文件源代码被 Git 统一管理。在使用它提交翻译时，也应遵循相关的开发流程与实践规范。
+
+### Git 提交 (Commit)
+
+提交信息力求简洁凝练，能反映提交中的**更改内容**。目前常用的格式是 `[语言代码] Add/Update/Clean up <文章英文名>`，这样能清楚地看出分支做出的更改，从而有助于在创建 PR 时写一个明确清晰的标题与描述。
+
+- **不好**：Update zh.md
+- **好**：[ZH] Add `Client`
+- **不好**：Add translation of `Client` articles and fix typo in `Client/Release_stream`
+
+此外，在采纳审阅建议的提交中可以花点小心思写一下提交信息，这样未来你与其他审阅者在看更改的时候会更清楚别人审阅的内容。直接使用默认信息（GitHub 网页端）也可以，不过太多了会显得不太好看。
+
+- **还行**：Apply suggestion from code review
+- **不错**：Rewrite translation in feature comparison
+
+如果对已经提交的内容还要做更改（比如发现了错别字，或者想改一下提交信息），可以使用 Git 的**修正 (Amend)** 功能更新上一次提交，无需再添加新提交。
+
+在为你的分支创建分支后，如果你对 Git 中的合并与变基操作不太明白，还是尽量不要尝试在分支中这么做（搞不好会让提交记录乱糟糟的）。当然，在翻译前从上游更新最新内容是完全可以的，直接合并即可。
+
+### GitHub 拉取请求 (PR)
+
+osu!wiki 仓库有针对拉取请求（下面统称 **PR**）的默认模板。在你创建 PR 时，应该可以看到描述框中填入了这样的东西：
+
+```md
+<!--
+  - Use [x] to complete the items
+  - Remove the items unrelated to your work
+  - Add any relevant information you consider useful
+  - If there are no reviewers for your language, please mention it explicitly
+-->
+
+## Self-check
+
+- [ ] The changes are tested against the [contribution checklist](https://osu.ppy.sh/wiki/osu!_wiki/Contribution_guide#self-check)
+- [ ] *(translations only)* The changes are reviewed on GitHub [by a fluent speaker](https://osu.ppy.sh/wiki/osu!_wiki/Contribution_guide#review)
+```
+
+这里的 Self check 对应着 osu!wiki 贡献过程中的两个步骤：**自查**与**审阅**。一般情况下第一项熟悉的话可以直接打勾，第二项需要等到有人审阅之后再去勾选。
+
+在网页端创建 PR 时，页脚会有一个 `Allow edits and access to secrets by maintainers` 的复选框需要勾选，这样维护者能够向你的分支推送更改（比如在最终合并前更新分支）。
+
+我们一般鼓励你将已经完成的翻译创建 PR，不过如果要翻译的内容过多，而你觉得一时半会做不完，可以先将部分翻译提交并推送，在创建 PR 时选择 `Create draft pull request （创建草稿拉取请求）`，等翻译完成后再转换成正常状态。
+
+## 4. 审阅与合并
+
+翻译审阅是 osu!wiki 翻译中的另一重要环节，与自动化的持续集成 (CI) 检测配合使用。具体来说，CI 能保证提交的文件没有格式、Markdown 语法规范上的问题，而人工审阅能使翻译合乎语义、通顺流畅，质量基本过关。
+
+在 GitHub 上提交翻译 PR 后，你需要等待其他人的审阅。
 
 ## 附录
 
