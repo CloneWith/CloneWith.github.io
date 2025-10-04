@@ -1,0 +1,4 @@
+mkdocs-material>=9.6.2
+pillow
+cairosvg
+Pygments
