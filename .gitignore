@@ -1,3 +1,4 @@
 # Ignore conf directory by default
+.idea
 .vscode
 site
